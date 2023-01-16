@@ -5,6 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <!--
+        Se define el proyecto padre el cual añade dependencias comunes a proyectos con Spring (spring-boot-starter-parent)
+        Entre ellos: spring-core, maven-jar-plugin, maven-surefire-plugin, maven-war-plugin, exec-maven-plugin, etc.
+        -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.0.0</version>
@@ -21,11 +25,18 @@
 
     <dependencies>
 
+        <!--
+        Agregar las dependencias típicas para una aplicación web (spring-boot-starter-web)
+        Este incluye: spring-boot-starter-tomcat, spring-web, spring-webmvc, hibernate-validator, jackson-databind, etc.
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--Agregar las dependencias típicas para testear una aplicación (spring-boot-starter-test)
+        Este incluye: JUnit Jupiter, Hamcrest y Mockito
+        -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -37,6 +48,7 @@
     <build>
         <plugins>
             <plugin>
+                <!--Construye un Paquete como un jar ejecutable-->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
